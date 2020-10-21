@@ -36,3 +36,12 @@ services:
     ports:
       - 1025:1025
       - 8025:8025
+
+  yarn:
+    build:
+      context: docker/yarn
+      args:
+        - NODE_VERSION=12
+    volumes:
+      - .:/var/www/html:cached
+    working_dir: /var/www/html
