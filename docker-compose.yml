@@ -1,4 +1,4 @@
-version: '3'
+version: "3"
 services:
   nginx:
     image: nginx:latest
@@ -29,3 +29,9 @@ services:
       - "3306:3306"
     volumes:
       - ./docker/mysql/var_lib_mysql:/var/lib/mysql
+
+  mailhog:
+    image: mailhog/mailhog:latest
+    ports:
+      - 1025:1025
+      - 8025:8025
