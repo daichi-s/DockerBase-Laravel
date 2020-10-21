@@ -29,4 +29,3 @@ services:
       - "3306:3306"
     volumes:
       - ./docker/mysql/var_lib_mysql:/var/lib/mysql
-      # /docker-entrypoint-initdb.d/配下は、Dockerコンテナが初回起動（初期化）される際に１度だけ実行されるスクリプトなどを配置
