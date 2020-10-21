@@ -16,6 +16,8 @@ reload:
 	@$(DC) up -d
 ps:
 	@$(DC) ps
+logs:
+	@$(DC) logs
 
 laravel:
 	@$(DC) exec php composer create-project --prefer-dist laravel/laravel="7.*"
@@ -33,5 +35,5 @@ install:
 	@$(DC) exec php composer install
 
 	
-# yarn:
-# 	@$(DC) run --rm yarn $(C)
+yarn:
+	@$(DC) run --rm yarn $(C)
