@@ -1,0 +1,3 @@
+CREATE DATABASE IF NOT EXISTS db;
+
+GRANT ALL ON *.* TO docker@'%' IDENTIFIED BY 'docker';

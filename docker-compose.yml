@@ -29,6 +29,7 @@ services:
       - "3306:3306"
     volumes:
       - ./docker/mysql/var_lib_mysql:/var/lib/mysql
+      - ./docker/mysql/initdb.d:/docker-entrypoint-initdb.d
 
   mailhog:
     image: mailhog/mailhog:latest
