@@ -19,7 +19,7 @@ services:
     #   - ./docker/php/xdebug.ini:/usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini
 
   mysql:
-    image: mysql:5.7
+    image: mysql:8.0
     environment:
       MYSQL_DATABASE: db
       MYSQL_USER: docker
@@ -29,9 +29,19 @@ services:
       - "3306:3306"
     volumes:
       - ./docker/mysql/var_lib_mysql:/var/lib/mysql
+      - ./docker/mysql/initdb.d:/docker-entrypoint-initdb.d
 
   mailhog:
     image: mailhog/mailhog:latest
     ports:
       - 1025:1025
       - 8025:8025
+
+  yarn:
+    build:
+      context: docker/yarn
+      args:
+        - NODE_VERSION=12
+    volumes:
+      - .:/var/www/html:cached
+    working_dir: /var/www/html
