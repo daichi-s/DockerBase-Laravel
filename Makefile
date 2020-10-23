@@ -34,6 +34,11 @@ install:
 
 	@$(DC) exec php composer install
 
-	
+artisan_:
+	@$(DC) exec php php artisan $(C)
+
+composer:
+	@$(DC) exec php composer $(C)
+
 yarn:
 	@$(DC) run --rm yarn $(C)
