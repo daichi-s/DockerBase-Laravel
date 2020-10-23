@@ -1,6 +1,6 @@
 CREATE DATABASE IF NOT EXISTS db;
 
-CREATE user 'docker'@'%' identified BY 'docker';
+-- CREATE user 'docker'@'%' identified BY 'docker';
 GRANT ALL ON *.* TO docker@'%';
 
 -- 旧認証方式で暗号化。
